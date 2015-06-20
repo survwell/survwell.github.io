@@ -1,0 +1,5 @@
+---
+layout: post
+title: cmake
+categories: tool
+---
