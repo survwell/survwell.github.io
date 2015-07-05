@@ -5,6 +5,7 @@ categories: tool
 ---
 
 本文整理了markdown的一些用法。
+主要是对[markdown官网教程](http://daringfireball.net/projects/markdown/basics)的翻译。
 
 1 如何定义标题
 ============
@@ -12,20 +13,20 @@ categories: tool
 1.1 方法一
 ----------
 
-       一级标题
-       =======
-
-       二级标题
-       -------
+    一级标题
+    =======
+    
+    二级标题
+    -------
 
 1.2 方法二
 ---------
 
-       # 一级标题
+    # 一级标题
 
-       ## 二级标题
+    ## 二级标题
 
-       ### 三级标题
+    ### 三级标题
 
 
 2 如何定义段落
@@ -42,12 +43,12 @@ categories: tool
 
 例如：
 
-        >  块级引用的第1段落
-        >
-        >  第二段落，
-        >  还是在第二段落
-        >
-        >  ...
+    >  块级引用的第1段落
+    >
+    >  第二段落，
+    >  还是在第二段落
+    >
+    >  ...
 
 效果：
 
@@ -66,11 +67,11 @@ categories: tool
 
 例如：
 
-        Some of these words *are emphasized*.
-        Some of these words _are emphasized_.
+    Some of these words *are emphasized*.
+    Some of these words _are emphasized_.
 
-        Use two asterisks for **strong emphasis**.
-        Or, if you prefer, __use two underscores instead__.
+    Use two asterisks for **strong emphasis**.
+    Or, if you prefer, __use two underscores instead__.
 
 效果：
 
@@ -93,21 +94,21 @@ Or, if you prefer, __use two underscores instead__.
 
 星号表示：
 
-        * apple
-        * banana
-        * pear
+    * apple
+    * banana
+    * pear
 
 加号表示：
 
-        + apple
-        + banana
-        + pear
+    + apple
+    + banana
+    + pear
 
 连字符表示：
 
-        - apple
-        - banana
-        - pear
+    - apple
+    - banana
+    - pear
 
 这3种表示效果都是：
 
@@ -123,9 +124,9 @@ Or, if you prefer, __use two underscores instead__.
 
 例如：
 
-        1. red
-        2. blue
-        3. black
+    1. red
+    2. blue
+    3. black
 
 效果：
 
@@ -142,10 +143,10 @@ Or, if you prefer, __use two underscores instead__.
 
 例如：
 
-        * A list item
-          With multiple paragraphs.
+    * A list item
+      With multiple paragraphs.
 
-        * Another list item
+    * Another list item
         
 效果：
 
@@ -158,6 +159,141 @@ Or, if you prefer, __use two underscores instead__.
 
 6 链接
 =====
+
+markdown支持2种方式的链接：inline和reference。这2种链接都是使用方括号指定要转化为链接的文本。
+
+6.1 inline形式的链接
+------------------
+
+创造inline形式的链接的方法：使用括号紧跟在链接文本后面，在括号中指定目的url。另外，括号中还可以添加一个可选的title属性。
+
+例如：
+
+    this is an [example link](http://www.example.com).
+        
+    this is an [example link with title](http://www.example.com "my title").
+
+效果：
+
+this is an [example link](http://www.example.com).
+
+this is an [example link with title](http://www.example.com "my title").
+
+
+6.2 reference形式的链接
+---------------------
+
+refrence形式的链接使你能够使用名字引用当前文档中的其他的链接。同样的,title属性也是可选的。
+
+例如（带title属性）：
+
+    I get 10 times more traffic from [Google][1] than [Yahoo][2] or [MSN][3].
+
+    [1]: http://google.com/          "Google"
+    [2]: http://search.yahoo.com/    "Yahoo search"
+    [3]: http://search.msn.com/      "MSG search"
+
+效果（带title属性）：
+
+I get 10 times more traffic from [Google][1] than [Yahoo][2] or [MSN][3].
+
+[1]: http://google.com/          "Google"
+[2]: http://search.yahoo.com/    "Yahoo search"
+[3]: http://search.msn.com/      "MSG search"
+
+例如（不带title属性）：
+
+    this is an [link without title][ny times].
+
+    [NY times]: http://www.nytimes.com/
+        
+效果（不带title属性）：
+
+this is an [link without title][ny times].
+
+[NY times]: http://www.nytimes.com/
+
+7 图片
+=====
+
+markdown中，在网页中添加图片的语法与链接的语法非常相似，也包括inline和reference两种。title属性也是可选的。**只是在第1个[前加一个!**
+
+例如（inline）：
+
+    ![alt text](/database/images/watch_moon.jpg)
+
+效果（inline）：
+
+![alt text](/database/images/watch_moon.jpg)
+
+例如（reference）：
+
+    ![alt text][id]
+
+    [id]: /database/images/watch_moon.jpg "观月"
+
+效果（reference）：
+
+![alt text][id]
+
+[id]: /database/images/watch_moon.jpg "观月"
+
+
+8 HTML代码
+=========
+
+8.1 代码片段
+-----------
+
+在普通的段落中，你可以使用反撇号创建代码片段。用2个反撇号扩起来的文本就被markdown认为是代码。
+任何`&`,`<`和`>`都会被自动转化为HTML实体.
+
+例如：
+
+    I strongly recommand against using any `<blink>` tags.
+
+    I wish SmartyPants used named entities link `&mdash;`
+    instead of decimal-encoded entities like `&#8212;`.
+
+效果：
+
+I strongly recommand against using any `<blink>` tags.
+
+I wish SmartyPants used named entities link `&mdash;`
+instead of decimal-encoded entities like `&#8212;`.
+
+8.2 代码片段
+-----------
+
+对于一个代码块，将每一行都缩进4个空格或者1个tab，会达到代码片段一样的效果：`&`,`<`,`>`字符会被自动地转义。
+
+例如：
+
+    If you want your page to validate under XHTML 1.0 Strict,
+    you've got to put paragrath tags in your blockquotes:
+
+        <blockquote>
+            <p>For example.</p>
+        </blockquote>
+
+效果：
+
+If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragrath tags in your blockquotes:
+
+    <blockquote>
+        <p>For example.</p>
+    </blockquote>
+
+
+
+
+
+
+
+
+
+
 
 
 
