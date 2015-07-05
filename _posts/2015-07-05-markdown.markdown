@@ -1,0 +1,164 @@
+---
+layout: post
+title: markdown
+categories: tool
+---
+
+本文整理了markdown的一些用法。
+
+1 如何定义标题
+============
+
+1.1 方法一
+----------
+
+       一级标题
+       =======
+
+       二级标题
+       -------
+
+1.2 方法二
+---------
+
+       # 一级标题
+
+       ## 二级标题
+
+       ### 三级标题
+
+
+2 如何定义段落
+============
+
+段落是被若干(大于等于1)空行隔开的若干(大于等于1)连续的行。(空行指看起来是空白的行，可以包含空格和tab)。一般段落不应该缩进(使用空格或者tab)。
+当前这一段就是段落。
+
+
+3 如何定义块级引用(BLOCKQUOTES)
+============================
+
+块级引用使用>定义。
+
+例如：
+
+        >  块级引用的第1段落
+        >
+        >  第二段落，
+        >  还是在第二段落
+        >
+        >  ...
+
+效果：
+
+>  块级引用的第1段落
+>
+>  第二段落，
+>  还是在第二段落
+>
+>  ...
+
+
+4 指明强调的语义
+==============
+
+使用*和_指明强调的语义。
+
+例如：
+
+        Some of these words *are emphasized*.
+        Some of these words _are emphasized_.
+
+        Use two asterisks for **strong emphasis**.
+        Or, if you prefer, __use two underscores instead__.
+
+效果：
+
+Some of these words *are emphasized*.
+Some of these words _are emphasized_.
+
+Use two asterisks for **strong emphasis**.
+Or, if you prefer, __use two underscores instead__.
+
+
+5 列表的表示
+===========
+
+5.1 无序列表
+-----------
+
+使用星号，加号和连字符(*,+,-)来标记无序列表。这3种符号是等价的。
+
+例如：
+
+星号表示：
+
+        * apple
+        * banana
+        * pear
+
+加号表示：
+
+        + apple
+        + banana
+        + pear
+
+连字符表示：
+
+        - apple
+        - banana
+        - pear
+
+这3种表示效果都是：
+
+* apple
++ banana
+- pear
+
+
+5.2 顺序列表
+-----------
+
+使用紧跟句号的数字标记顺序列表。
+
+例如：
+
+        1. red
+        2. blue
+        3. black
+
+效果：
+
+1. red
+2. blue
+3. black
+
+
+5.3 其他说明
+----------
+
+如果在列表条目间加入空行，则列表条目会展示为段落。
+通过对列表条目进行缩进，可以创建多段落的列表条目。
+
+例如：
+
+        * A list item
+          With multiple paragraphs.
+
+        * Another list item
+        
+效果：
+
+* A list item
+
+  With multiple paragraphs.
+
+* Another list item
+
+
+6 链接
+=====
+
+
+
+
