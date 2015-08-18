@@ -38,7 +38,10 @@
 *** 工具
 
 **** 掌握
-***** 掌握make/cmake
+***** make
+****** makefile编写
+***** cmake
+****** CMakeLists.txt编写
 **** 理解
 ***** 能够使用Debian GNU/Linux，并解决实际问题。
 ***** emacs
