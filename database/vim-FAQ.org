@@ -1,0 +1,8 @@
+
+* clang_complete
+** 安装clang_complete之后，运行vim总报错"Loading libclang failed, completion won't be available. Consider setting g:clang_library_path."
+*** 解决方法1:安装libclang后，libclang.so应该位于:/usr/lib/llvm-3.5/lib/libclang.so
+    然后添加clang_complete的配置到vim里
+    let g:clang_use_library = 1
+    let g:clang_library_path = '/usr/lib/llvm-3.5/lib/'
+*** 解决方法2:执行: sudo ln -s /usr/lib/llvm-3.5/lib/libclang.so.1 /usr/lib/libclang.so
